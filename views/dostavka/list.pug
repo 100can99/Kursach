@@ -1,0 +1,95 @@
+extends ../layout
+
+block content
+    script(src='/javascripts/dostavka.js')
+
+    h1= title
+    button(id='create_dostav') Создать
+    button(id='edit_dostav') Редактировать
+    button(id='delete_dostav') Удалить
+    button(id='info_dostav') Инфо
+    table#tbl_dostavka
+        tr 
+            th id
+            th Количество
+            th Цена
+            th Дата
+            th Поставщик
+            th Пользователь
+            th Еда
+
+
+
+    div#create_dostav_popup.q-window
+          div.q-window-block(style="width:400px;height:220px;margin:-150px 0 0 -400px")
+            div.q-window-header Создать доставку
+              a#create_dostav_popup_close(style="position: relative;left: 300px;") 
+            div.q-window-body.q-form
+              div.q-window-filters-form
+                div.q-form-data
+                  label(for="inpEda") Тип
+                  input#inpEda(type="text")
+                div.q-form-data
+                  label(for="inpKolicestvo") Количество
+                  input#inpKolicestvo(type="text")
+                div.q-form-data
+                  label(for="inpPost") Поставщик
+                  input#inpPost(type="text")
+                div.q-form-data
+                  label(for="inpPolz") Пользователь
+                  input#inpPolz(type="text")
+            div.q-buttons
+              a#submit_dostav_dostav Создать
+              a#cancel_dostav_dostav Отменить
+
+
+    div#edit_dostav_popup.q-window
+          div.q-window-block(style="wigth:400px;height:220px;margin:-150px 0 0 -400px")
+            div.q-window-header Изменить доставку
+              a#edit_dostav_popup_close(style="position: relative;left: 300px;")
+            div.q-window-body.q-form
+              div.q-window-filters-form
+                div.q-form-data
+                  label(for="editinpEda") Тип 
+                  input#editinpEda(type="text")
+                div.q-form-data 
+                  label(for="editinpKolicestvo") Количество
+                  input#editinpKolicestvo(type="text")
+                div.q-form-data 
+                  label(for="editinpPost") Поставщик
+                  input#editinpPost(type="text")
+                div.q-form-data
+                  label(for="editinpPolz") Пользователь
+                  input#editinpPolz(type="text")
+            div.q-buttons
+              a#submit_edit_dostav Подтвердить
+              a#cancel_edit_dostav Отменить
+
+    div#delete_dostav_popup.q-window
+          div.q-window-block(style="wigth:400px;height:220px;margin:-150px 0 0 -400px")
+            div.q-window-header Удалить доставку
+              a#delete_dostav_popup_close(style="position: relative;left: 300px;")
+            div.q-window-body.q-form
+              div.q-window-filters-form
+                div.q-form-data 
+                  label(for="deleteinpPolz") Удалить пользователя:
+                  input#deleteinpPolz(type="text")
+            div.q-buttons
+              a#submit_delete_dostav Подтвердить
+              a#cancel_delete_dostav Отменить
+
+
+    div#info_dostav_popup.q-window
+          div.q-window-block(style="wigth:400px;height:220px;margin:-150px 0 0 -400px")
+            div.q-window-header Инфо
+              a#info_dostav_popup_close(style="position: relative;left: 300px;")
+            div.q-window-body.q-form
+              div.q-window-filters-form
+                div.q-form-data 
+                  label(for="deleteinpPolz") Создание: 1-еда, 2-напиток, цена определяется автоматически
+                div.q-form-data 
+                  label(for="deleteinpPolz") Поставщики: 1-Pico-pico, 2-Do-do
+                div.q-form-data 
+                  label(for="deleteinpPolz") Редактирование по графе "id"
+            div.q-buttons
+              a#submit_info_dostav Закрыть             

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    div
+        ul
+          li
+            a(href='/') Главная страница
+            if user
+              if can.view_prodazhi
+                li
+                  a(href='/prodazhi') Клиенты
+              if can.view_postavshiki
+                li
+                  a(href='/postavshiki') Поставщики
+              if can.view_eda
+                li
+                  a(href='/eda') Каталог
+              if can.view_dostavka
+                li
+                  a(href='/dostavka') Платежи
+              if can.view_users
+                li
+                  a(href='/users') Пользователи
+              li
+                a(href='', id='Logout') Выйти
+            else
+                li
+                    a(href='', id='Login') Войти

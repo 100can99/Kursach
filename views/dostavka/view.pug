@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    h1= title
+    div
+      form
+        fieldset
+          label Номер еды
+          input(type='text', disabled=true, value=dostavka.id_edi)
+          br
+          label Клиент
+          input(type='text', disabled=true, value=dostavka.id_user)
+          br
+          label Количество
+          input(type='text', disabled=true, value=dostavka.kolicestvo)
+          br
+          label Сумма
+          input(type='text', disabled=true, value=dostavka.cena)
